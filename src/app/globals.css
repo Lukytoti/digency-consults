@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 5 8 40;
+    --muted: 100 116 139;
+    --border: 226 232 240;
+    --card: 255 255 255;
+    --card-foreground: 5 8 40;
+    --primary: 59 130 246;
+    --accent-purple: 139 92 246;
+    --accent-green: 16 185 129;
+  }
+
+  .dark {
+    --background: 5 8 40;
+    --foreground: 248 250 252;
+    --muted: 148 163 184;
+    --border: 30 41 59;
+    --card: 10 18 64;
+    --card-foreground: 248 250 252;
+    --primary: 96 165 250;
+    --accent-purple: 167 139 250;
+    --accent-green: 52 211 153;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-slate-900 dark:bg-navy-950 dark:text-slate-100;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-electric/30 text-slate-900 dark:text-white;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-navy-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-navy-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electric;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/60 dark:bg-white/5 border border-slate-200/60 dark:border-white/10;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-glass;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-electric via-neon-purple to-neon-green;
+  }
+
+  .gradient-border {
+    position: relative;
+    background-clip: padding-box;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #10b981);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-navy-950;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-electric via-neon-purple to-electric bg-[length:200%_auto] text-white shadow-glow hover:bg-[position:100%_0] hover:shadow-glow-purple;
+  }
+
+  .btn-secondary {
+    @apply btn glass text-slate-900 dark:text-white hover:bg-white/80 dark:hover:bg-white/10;
+  }
+
+  .btn-outline {
+    @apply btn border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white hover:border-electric dark:hover:border-electric;
+  }
+
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-electric;
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(
+        to right,
+        rgba(148, 163, 184, 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(148, 163, 184, 0.08) 1px,
+        transparent 1px
+      );
+    background-size: 40px 40px;
+  }
+
+  .dark .grid-bg {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      );
+  }
+
+  .glow-orb {
+    @apply pointer-events-none absolute rounded-full blur-3xl opacity-40;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+}

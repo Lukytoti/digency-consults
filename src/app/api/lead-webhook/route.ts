@@ -1,0 +1,58 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getSupabaseAdmin } from "@/lib/supabase";
+import { forwardLeadToCRM } from "@/lib/webhook";
+
+export const runtime = "nodejs";
+
+/**
+ * Generic lead-capture webhook.
+ *
+ * Use this from quizzes, lead magnets, ad form integrations or third-party
+ * tools. POST any JSON; we'll persist it in Supabase and forward it to your
+ * downstream n8n / GHL webhook.
+ *
+ * Optional protection: set `LEAD_WEBHOOK_SECRET` in env and pass it as
+ * `x-webhook-secret` header.
+ */
+export async function POST(req: NextRequest) {
+  const secret = process.env.LEAD_WEBHOOK_SECRET;
+  if (secret && req.headers.get("x-webhook-secret") !== secret) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  let payload: Record<string, unknown> = {};
+  try {
+    payload = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
+
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { error } = await supabase.from("leads").insert({
+      name: (payload.name as string) ?? null,
+      email: (payload.email as string) ?? null,
+      phone: (payload.phone as string) ?? null,
+      company: (payload.company as string) ?? null,
+      service: (payload.service as string) ?? null,
+      budget: (payload.budget as string) ?? null,
+      message: (payload.message as string) ?? null,
+      source: (payload.source as string) ?? "lead-webhook",
+      raw: payload,
+    });
+    if (error) console.error("[lead-webhook] supabase insert error", error);
+  }
+
+  // Fan out to downstream CRM workflow
+  await forwardLeadToCRM(payload);
+
+  return NextResponse.json({ ok: true });
+}
+
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    name: "Digency Consults Lead Webhook",
+    methods: ["POST"],
+  });
+}
