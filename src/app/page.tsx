@@ -10,10 +10,41 @@ import { ResultsSection } from "@/components/sections/ResultsSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTASection } from "@/components/sections/CTASection";
+import { siteConfig } from "@/lib/site-config";
 
 export default function HomePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/favicon.svg`,
+    description: siteConfig.description,
+    founder: {
+      "@type": "Person",
+      name: siteConfig.founder.name,
+      jobTitle: siteConfig.founder.role,
+      url: siteConfig.founder.linkedin,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: siteConfig.contact.email,
+      contactType: "customer service",
+    },
+    sameAs: [
+      siteConfig.social.linkedin,
+      siteConfig.social.twitter,
+      siteConfig.social.youtube,
+      siteConfig.social.instagram,
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Hero />
       <ToolStackSection />
       <ProblemsSection />

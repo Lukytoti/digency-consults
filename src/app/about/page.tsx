@@ -64,7 +64,7 @@ export default function AboutPage() {
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover object-top"
                   priority
-                  quality={100}
+                  quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
@@ -87,7 +87,7 @@ export default function AboutPage() {
                       alt={siteConfig.founder.name}
                       fill
                       className="object-cover"
-                      quality={100}
+                      quality={90}
                     />
                   </div>
                   <div>

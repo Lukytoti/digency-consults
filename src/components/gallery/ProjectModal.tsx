@@ -94,7 +94,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     fill
                     sizes="(min-width: 1024px) 80vw, 95vw"
                     className="object-cover object-top"
-                    quality={100}
+                    quality={90}
                   />
                 </motion.div>
               </AnimatePresence>

@@ -191,7 +191,7 @@ export function Hero() {
                       sizes="(min-width: 1024px) 50vw, 100vw"
                       className="object-cover object-top"
                       priority={currentIndex === 0}
-                      quality={100}
+                      quality={90}
                     />
                   </motion.div>
                 </AnimatePresence>
@@ -223,13 +223,15 @@ export function Hero() {
                   <button
                     key={i}
                     onClick={() => setCurrentIndex(i)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                    className="relative flex items-center justify-center py-3"
+                    aria-label={`View project ${i + 1}: ${showcaseProjects[i].title}`}
+                  >
+                    <span className={`block h-1.5 rounded-full transition-all duration-300 ${
                       i === currentIndex
                         ? "w-8 bg-electric"
                         : "w-4 bg-slate-300 dark:bg-white/20 hover:bg-slate-400 dark:hover:bg-white/30"
-                    }`}
-                    aria-label={`View project ${i + 1}`}
-                  />
+                    }`} />
+                  </button>
                 ))}
               </div>
             </div>

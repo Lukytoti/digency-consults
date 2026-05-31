@@ -35,7 +35,6 @@ Built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**,
 - `/portfolio` — All projects with problem / solution / tools / result
 - `/case-studies` — Long-form case studies with metrics
 - `/testimonials` — All testimonials and social proof
-- `/pricing` — Sprint, System, Engine packages
 - `/blog` + `/blog/[slug]` — Articles
 - `/contact` — Contact form + booking links
 
@@ -86,8 +85,8 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
 
 RESEND_API_KEY=...
-RESEND_FROM_EMAIL="Digency Consults <hello@digencyconsults.com>"
-CONTACT_TO_EMAIL=hello@digencyconsults.com
+RESEND_FROM_EMAIL="Digency Consults <lawrence.digenci@gmail.com>"
+CONTACT_TO_EMAIL=lawrence.digenci@gmail.com
 
 LEAD_WEBHOOK_URL=https://your-n8n-or-ghl-webhook
 LEAD_WEBHOOK_SECRET=optional-shared-secret
@@ -136,7 +135,6 @@ src/
     case-studies/
     contact/
     portfolio/
-    pricing/
     services/
     testimonials/
   components/
@@ -147,7 +145,7 @@ src/
     sections/         # Hero, Problems, Services, ... etc.
     ui/               # ThemeToggle
     widgets/          # Analytics, WhatsAppButton
-  data/               # services, projects, testimonials, pricing, blog, ...
+  data/               # services, projects, testimonials, blog, ...
   lib/                # site-config, utils, supabase, resend, webhook, validators
 supabase/
   schema.sql          # Postgres schema for leads + newsletter

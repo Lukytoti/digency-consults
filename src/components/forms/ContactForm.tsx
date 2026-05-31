@@ -41,7 +41,7 @@ export function ContactForm() {
       if (!res.ok) throw new Error(data.error ?? "Failed to submit form");
       setStatus("success");
       setMessage(
-        "Got it. I'll reply personally within 24 hours, usually faster."
+        "Thank you. Your message has been received. I will get back to you shortly."
       );
       (e.target as HTMLFormElement).reset();
     } catch (err) {

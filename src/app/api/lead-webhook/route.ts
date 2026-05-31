@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { forwardLeadToCRM } from "@/lib/webhook";
+import { getResend, FROM, TO } from "@/lib/resend";
 
 export const runtime = "nodejs";
 
@@ -46,6 +47,39 @@ export async function POST(req: NextRequest) {
   // Fan out to downstream CRM workflow
   await forwardLeadToCRM(payload);
 
+  // Send notification email via Resend
+  const resend = getResend();
+  if (resend) {
+    try {
+      const submittedAt = new Date().toLocaleString("en-GB", {
+        dateStyle: "full",
+        timeStyle: "short",
+      });
+      await resend.emails.send({
+        from: FROM,
+        to: TO,
+        subject: `New lead (webhook): ${(payload.name as string) || (payload.email as string) || "Unknown"}`,
+        html: `
+          <h2>New lead via webhook</h2>
+          <ul>
+            <li><strong>Name:</strong> ${escape(String(payload.name ?? ""))}</li>
+            <li><strong>Email:</strong> ${escape(String(payload.email ?? ""))}</li>
+            <li><strong>Phone:</strong> ${escape(String(payload.phone ?? ""))}</li>
+            <li><strong>Service needed:</strong> ${escape(String(payload.service ?? ""))}</li>
+            <li><strong>Budget:</strong> ${escape(String(payload.budget ?? ""))}</li>
+            <li><strong>Message:</strong> ${escape(String(payload.message ?? ""))}</li>
+            <li><strong>Source page:</strong> ${escape(String(payload.source ?? "lead-webhook"))}</li>
+            <li><strong>Date/time submitted:</strong> ${submittedAt}</li>
+          </ul>
+        `,
+      });
+    } catch (err) {
+      console.error("[lead-webhook] resend error", err);
+    }
+  } else {
+    console.warn("[lead-webhook] RESEND_API_KEY not set, skipping notification email");
+  }
+
   return NextResponse.json({ ok: true });
 }
 
@@ -55,4 +89,12 @@ export async function GET() {
     name: "Digency Consults Lead Webhook",
     methods: ["POST"],
   });
+}
+
+function escape(s: string) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }

@@ -81,6 +81,8 @@ export default function BlogPostPage({
               <a
                 className="text-electric"
                 href={"https://www.linkedin.com/in/oluwatobi-olowookere-720b3610a/"}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>

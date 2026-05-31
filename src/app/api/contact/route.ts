@@ -47,21 +47,25 @@ export async function POST(req: NextRequest) {
     const resend = getResend();
     if (resend) {
       try {
+        const submittedAt = new Date().toLocaleString("en-GB", {
+          dateStyle: "full",
+          timeStyle: "short",
+        });
         await resend.emails.send({
           from: FROM,
           to: TO,
           replyTo: data.email,
-          subject: `New lead: ${data.name} • ${data.service || "General"}`,
+          subject: `New lead: ${data.name} - ${data.service || "General"}`,
           html: `
             <h2>New lead from digencyconsults.com</h2>
             <ul>
               <li><strong>Name:</strong> ${escape(data.name)}</li>
               <li><strong>Email:</strong> ${escape(data.email)}</li>
-              <li><strong>Company:</strong> ${escape(data.company ?? "")}</li>
               <li><strong>Phone:</strong> ${escape(data.phone ?? "")}</li>
-              <li><strong>Service:</strong> ${escape(data.service ?? "")}</li>
+              <li><strong>Service needed:</strong> ${escape(data.service ?? "")}</li>
               <li><strong>Budget:</strong> ${escape(data.budget ?? "")}</li>
-              <li><strong>Source:</strong> ${escape(data.source ?? "")}</li>
+              <li><strong>Source page:</strong> ${escape(data.source ?? "")}</li>
+              <li><strong>Date/time submitted:</strong> ${submittedAt}</li>
             </ul>
             <p><strong>Message:</strong></p>
             <p>${escape(data.message).replace(/\n/g, "<br/>")}</p>
@@ -84,6 +88,8 @@ export async function POST(req: NextRequest) {
       } catch (err) {
         console.error("[contact] resend error", err);
       }
+    } else {
+      console.warn("[contact] RESEND_API_KEY not set, skipping notification email");
     }
 
     return NextResponse.json({ ok: true });

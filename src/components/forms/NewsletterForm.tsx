@@ -23,7 +23,7 @@ export function NewsletterForm({ className }: { className?: string }) {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong");
       setStatus("success");
-      setMessage("You're in. The next AI + CRM playbook drops soon.");
+      setMessage("Thank you. Your message has been received. I will get back to you shortly.");
       setEmail("");
     } catch (err) {
       setStatus("error");

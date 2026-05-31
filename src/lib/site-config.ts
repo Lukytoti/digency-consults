@@ -18,7 +18,7 @@ export const siteConfig = {
       "AI & CRM Infrastructure Engineer | GoHighLevel • n8n • OpenAI • WhatsApp Automation • Sales Funnels",
   },
   contact: {
-    email: "hello@digencyconsults.com",
+    email: "lawrence.digenci@gmail.com",
     whatsapp:
       process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/447448309532",
     calendar:
