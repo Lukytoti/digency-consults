@@ -1,5 +1,14 @@
 import Link from "next/link";
-import { Sparkles, Linkedin, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import {
+  Sparkles,
+  Linkedin,
+  Mail,
+  MessageCircle,
+  ArrowUpRight,
+  Facebook,
+  Briefcase,
+  CalendarCheck,
+} from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
@@ -8,7 +17,10 @@ export function Footer() {
     <footer className="relative border-t border-slate-200/70 dark:border-white/10 bg-white dark:bg-navy-950">
       <div className="container py-16 md:py-20 grid gap-12 lg:grid-cols-4">
         <div className="lg:col-span-2 max-w-md">
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-display text-lg font-bold"
+          >
             <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-electric via-neon-purple to-neon-green text-white shadow-glow">
               <Sparkles className="h-4 w-4" />
             </span>
@@ -18,8 +30,8 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
-            {siteConfig.tagline} GoHighLevel • n8n • OpenAI • WhatsApp •
-            funnels • websites.
+            {siteConfig.tagline} GoHighLevel · n8n · OpenAI · WhatsApp ·
+            funnels · websites.
           </p>
 
           <div className="mt-6">
@@ -40,7 +52,6 @@ export function Footer() {
               { label: "Services", href: "/services" },
               { label: "Portfolio", href: "/portfolio" },
               { label: "Case Studies", href: "/case-studies" },
-              { label: "Pricing", href: "/pricing" },
               { label: "Blog", href: "/blog" },
               { label: "Contact", href: "/contact" },
             ].map((l) => (
@@ -63,26 +74,18 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li>
               <a
-                href={siteConfig.social.linkedin}
+                href={siteConfig.contact.calendar}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
               >
-                <Linkedin className="h-4 w-4" /> LinkedIn
+                <CalendarCheck className="h-4 w-4" /> Book a Strategy Call
                 <ArrowUpRight className="h-3 w-3" />
               </a>
             </li>
             <li>
               <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
-              >
-                <Mail className="h-4 w-4" /> {siteConfig.contact.email}
-              </a>
-            </li>
-            <li>
-              <a
-                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                href={siteConfig.social.whatsapp}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
@@ -92,13 +95,50 @@ export function Footer() {
             </li>
             <li>
               <a
-                href={siteConfig.contact.calendar}
+                href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
               >
-                Book a Strategy Call
-                <ArrowUpRight className="h-3 w-3" />
+                <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href={siteConfig.social.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+              >
+                <Facebook className="h-4 w-4" /> Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href={siteConfig.social.fiverr}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+              >
+                <Briefcase className="h-4 w-4" /> Fiverr Profile
+              </a>
+            </li>
+            <li>
+              <a
+                href={siteConfig.social.upwork}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+              >
+                <Briefcase className="h-4 w-4" /> Upwork Profile
+              </a>
+            </li>
+            <li>
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+              >
+                <Mail className="h-4 w-4" /> {siteConfig.contact.email}
               </a>
             </li>
           </ul>
@@ -120,8 +160,8 @@ export function Footer() {
             .
           </p>
           <p>
-            AI &amp; CRM Infrastructure • GoHighLevel • n8n • OpenAI •
-            WhatsApp • Funnels
+            AI &amp; CRM Infrastructure · GoHighLevel · n8n · OpenAI · WhatsApp ·
+            Funnels
           </p>
         </div>
       </div>

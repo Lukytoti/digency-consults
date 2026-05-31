@@ -3,6 +3,7 @@ import { caseStudies } from "@/data/case-studies";
 import { CaseStudyCard } from "@/components/cards/CaseStudyCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
+import { ProjectGallerySection } from "@/components/sections/ProjectGallerySection";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -38,6 +39,14 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       </section>
+
+      <ProjectGallerySection
+        eyebrow="Project gallery"
+        title="Browse the visual archive"
+        subtitle="Every screenshot below comes from a system currently in production. Filter by category, click to expand."
+        showAllLink={false}
+        variant="muted"
+      />
 
       <section className="section">
         <div className="container space-y-20">
