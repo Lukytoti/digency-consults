@@ -9,20 +9,22 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section relative">
+    <section className="py-16 md:py-20 relative">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="eyebrow">FAQ</p>
-          <h2 className="mt-4 section-title text-slate-900 dark:text-white text-balance">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
+            FAQ
+          </p>
+          <h2 className="mt-3 font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
             Common questions, answered.
           </h2>
-          <p className="mt-4 text-slate-600 dark:text-slate-300">
-            If you don't see your question here, just reach out — I usually
+          <p className="mt-3 text-slate-600 dark:text-slate-300">
+            If you don&apos;t see your question here, just reach out — I usually
             reply on WhatsApp the same day.
           </p>
         </div>
 
-        <div className="mt-12 max-w-3xl mx-auto space-y-3">
+        <div className="mt-10 max-w-3xl mx-auto space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (

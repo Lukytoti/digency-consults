@@ -39,7 +39,6 @@ export const siteConfig = {
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],

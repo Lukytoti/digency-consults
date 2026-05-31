@@ -1,168 +1,146 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, PlayCircle, Sparkles, Star } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 md:pt-40 pb-20 md:pb-28">
-      {/* Background orbs */}
-      <div className="glow-orb h-[500px] w-[500px] -left-40 top-0 bg-electric" />
-      <div className="glow-orb h-[500px] w-[500px] -right-40 top-32 bg-neon-purple" />
-      <div className="absolute inset-0 grid-bg opacity-40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-navy-950" />
+    <section className="relative overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16">
+      {/* Subtle background */}
+      <div className="absolute inset-0 grid-bg opacity-30" />
+      <div className="glow-orb h-[600px] w-[600px] -top-40 left-1/2 -translate-x-1/2 bg-electric/20" />
 
       <div className="container relative">
-        <div className="mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-electric"
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-            AI &amp; CRM Infrastructure Engineer
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-balance text-slate-900 dark:text-white"
-          >
-            I Build Websites, Funnels, CRM Systems and{" "}
-            <span className="gradient-text">AI Automations</span> That Help
-            Businesses Capture Leads, Follow Up Automatically and Convert More
-            Clients.
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
-          >
-            I help businesses set up smart systems using GoHighLevel, n8n, AI
-            agents, WhatsApp, SMS, email automation and high-converting websites
-            so they can save time, generate leads and close more sales.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-10 flex flex-col sm:flex-row gap-3 justify-center"
-          >
-            <Link
-              href={siteConfig.contact.calendar}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary px-6 py-3.5"
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+          {/* Left – Text content */}
+          <div className="lg:col-span-3">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-3"
             >
-              Book a Strategy Call <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link href="/portfolio" className="btn-secondary px-6 py-3.5">
-              <PlayCircle className="h-4 w-4" /> View My Work
-            </Link>
-          </motion.div>
+              <div className="h-12 w-12 rounded-full bg-gradient-to-br from-electric via-neon-purple to-neon-green p-[2px]">
+                <div className="h-full w-full rounded-full bg-white dark:bg-navy-950 flex items-center justify-center">
+                  <span className="text-sm font-bold gradient-text">OO</span>
+                </div>
+              </div>
+              <div>
+                <p className="text-base font-semibold text-slate-900 dark:text-white">
+                  Oluwatobi Olowookere
+                </p>
+                <p className="text-sm text-electric font-medium">
+                  AI &amp; CRM Infrastructure Engineer
+                </p>
+              </div>
+            </motion.div>
 
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-8 font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-bold tracking-tight leading-[1.1] text-slate-900 dark:text-white"
+            >
+              I Build Revenue Systems, AI Automations, CRM Infrastructure and
+              Lead Generation Systems That Help Businesses{" "}
+              <span className="gradient-text">Scale Without Manual Work.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-5 text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed"
+            >
+              I design and deploy backend automation, CRM systems, AI workflows
+              and revenue infrastructure using GoHighLevel, n8n, OpenAI, WhatsApp,
+              VAPI &amp; more — so your business captures leads, follows up
+              automatically and closes clients without you touching anything.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8 flex flex-col sm:flex-row gap-3"
+            >
+              <Link
+                href={siteConfig.contact.calendar}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary px-7 py-3.5 text-base"
+              >
+                Book a Strategy Call <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary px-6 py-3.5 text-base"
+              >
+                <Linkedin className="h-4 w-4" /> Connect on LinkedIn
+              </a>
+            </motion.div>
+
+            {/* Micro-proof line */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="mt-6 text-sm text-slate-500 dark:text-slate-400"
+            >
+              Trusted by founders, agencies &amp; operators across 3 continents.
+              <span className="mx-2 text-slate-300 dark:text-slate-600">|</span>
+              20+ projects shipped. 8+ AI agents in production.
+            </motion.p>
+          </div>
+
+          {/* Right – Photo */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-slate-600 dark:text-slate-400"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-2 flex justify-center lg:justify-end"
           >
-            <div className="flex items-center -space-x-2">
-              {[
-                "0ea5e9",
-                "8b5cf6",
-                "10b981",
-                "f59e0b",
-                "ef4444",
-              ].map((c, i) => (
-                <span
-                  key={i}
-                  className="inline-block h-8 w-8 rounded-full border-2 border-white dark:border-navy-950"
-                  style={{ background: `#${c}` }}
+            <div className="relative">
+              {/* Glow behind photo */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-electric/30 via-neon-purple/20 to-neon-green/20 blur-2xl scale-110" />
+              <div className="relative rounded-3xl overflow-hidden border-2 border-white/10 shadow-glow w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] lg:w-[360px] lg:h-[440px]">
+                {/* Professional photo placeholder — replace with your actual photo */}
+                <Image
+                  src="/images/tobi-photo.jpg"
+                  alt="Oluwatobi Olowookere — AI & CRM Infrastructure Engineer"
+                  fill
+                  sizes="(min-width: 1024px) 360px, 320px"
+                  className="object-cover"
+                  priority
                 />
-              ))}
-            </div>
-            <div className="flex items-center gap-1 text-amber-500">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-current" />
-              ))}
-              <span className="ml-2 text-slate-700 dark:text-slate-300">
-                Trusted by 20+ founders, agencies and operators
-              </span>
+                {/* Fallback gradient if image not found */}
+                <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-electric/30 flex items-end justify-center p-6">
+                  <div className="text-center">
+                    <p className="text-white font-display text-2xl font-bold">OO</p>
+                    <p className="text-slate-300 text-xs mt-1">Add your photo at<br/>/public/images/tobi-photo.jpg</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute -bottom-3 -left-3 rounded-xl glass-card px-4 py-2.5 shadow-glow animate-float">
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Currently</p>
+                <p className="text-sm font-semibold text-emerald-500">3 AI agents live</p>
+              </div>
+
+              {/* Floating badge top */}
+              <div className="absolute -top-3 -right-3 rounded-xl glass-card px-4 py-2.5 shadow-glow-purple">
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">This month</p>
+                <p className="text-sm font-semibold text-neon-purple">4 systems deployed</p>
+              </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Floating preview card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative mt-16 mx-auto max-w-5xl"
-        >
-          <div className="relative rounded-3xl glass-card p-2 md:p-3 shadow-glow">
-            <div className="rounded-2xl bg-gradient-to-br from-navy-900 via-navy-950 to-black p-6 md:p-10">
-              <div className="grid md:grid-cols-3 gap-4">
-                {[
-                  {
-                    label: "Avg Lead Response",
-                    value: "<60s",
-                    accent: "text-electric",
-                  },
-                  {
-                    label: "Booked Calls / Mo",
-                    value: "+220%",
-                    accent: "text-neon-purple",
-                  },
-                  {
-                    label: "Email + SMS ROI",
-                    value: "42x",
-                    accent: "text-neon-green",
-                  },
-                ].map((s) => (
-                  <div
-                    key={s.label}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-6"
-                  >
-                    <p className="text-xs uppercase tracking-wider text-slate-400">
-                      {s.label}
-                    </p>
-                    <p
-                      className={`mt-2 font-display text-3xl md:text-4xl font-bold ${s.accent}`}
-                    >
-                      {s.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 grid sm:grid-cols-2 gap-3 text-xs text-slate-400">
-                <div className="rounded-xl border border-white/10 bg-black/30 p-4 font-mono">
-                  <span className="text-emerald-400">▸</span> ai_agent.qualify_lead()
-                  <br />
-                  <span className="text-slate-500">{"// 8s avg, 60% more SQLs"}</span>
-                </div>
-                <div className="rounded-xl border border-white/10 bg-black/30 p-4 font-mono">
-                  <span className="text-electric">▸</span> ghl.workflow.fire("nurture_v3")
-                  <br />
-                  <span className="text-slate-500">{"// 14 day cross-channel cadence"}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute -bottom-4 -right-4 hidden md:block animate-float">
-            <div className="rounded-2xl glass-card px-4 py-3 text-xs">
-              <p className="text-slate-500 dark:text-slate-400">Live now</p>
-              <p className="font-semibold text-emerald-500">3 AI agents qualifying leads</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

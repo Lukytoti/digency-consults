@@ -10,26 +10,28 @@ export function CTASection({
   subtitle?: string;
 }) {
   return (
-    <section className="section relative overflow-hidden">
+    <section className="py-16 md:py-20 relative overflow-hidden">
       <div className="container relative">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 via-navy-950 to-black p-10 md:p-16 text-white">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-navy-900 via-navy-950 to-black p-8 md:p-14 text-white">
           <div className="glow-orb h-[400px] w-[400px] -top-32 -right-32 bg-electric" />
           <div className="glow-orb h-[400px] w-[400px] -bottom-32 -left-32 bg-neon-purple" />
-          <div className="absolute inset-0 grid-bg opacity-30" />
+          <div className="absolute inset-0 grid-bg opacity-20" />
 
           <div className="relative max-w-3xl">
-            <p className="eyebrow !text-neon-green">Final CTA</p>
-            <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold tracking-tight text-balance">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neon-green">
+              Let&apos;s work together
+            </p>
+            <h2 className="mt-4 font-display text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
               {title}
             </h2>
-            <p className="mt-4 text-slate-300 text-lg">{subtitle}</p>
+            <p className="mt-4 text-slate-300 text-base md:text-lg">{subtitle}</p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 href={siteConfig.contact.calendar}
                 target="_blank"
                 rel="noreferrer"
-                className="btn-primary px-6 py-3.5"
+                className="btn-primary px-7 py-3.5"
               >
                 Book a Strategy Call <ArrowRight className="h-4 w-4" />
               </Link>

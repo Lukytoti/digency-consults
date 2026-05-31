@@ -42,21 +42,23 @@ const problems = [
 
 export function ProblemsSection() {
   return (
-    <section className="section relative">
+    <section className="py-16 md:py-20 relative">
       <div className="container">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Problems I solve</p>
-          <h2 className="mt-4 section-title text-slate-900 dark:text-white text-balance">
-            If your business has any of these, you're losing revenue every day.
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
+            Problems I solve
+          </p>
+          <h2 className="mt-3 font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+            If your business has any of these, you&apos;re losing revenue every day.
           </h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-            I've seen the same six problems kill growth across coaching,
-            agencies, real estate and B2B. The good news: they're all
+          <p className="mt-3 text-slate-600 dark:text-slate-300">
+            I&apos;ve seen the same six problems kill growth across coaching,
+            agencies, real estate and B2B. The good news: they&apos;re all
             infrastructure problems — and infrastructure is fixable.
           </p>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {problems.map((p) => {
             const Icon = p.icon;
             return (

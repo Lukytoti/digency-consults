@@ -1,44 +1,42 @@
-import { tools } from "@/data/tools";
-import { cn } from "@/lib/utils";
+"use client";
 
-export function ToolStackSection({
-  title = "The stack I build with",
-  subtitle = "Trusted tools I deploy daily for clients across coaching, real estate, SaaS and B2B.",
-  className,
-}: {
-  title?: string;
-  subtitle?: string;
-  className?: string;
-}) {
-  // Duplicate for seamless marquee
-  const list = [...tools, ...tools];
+import { motion } from "framer-motion";
 
+const trustedTools = [
+  { name: "GoHighLevel", abbr: "GHL" },
+  { name: "n8n", abbr: "n8n" },
+  { name: "OpenAI", abbr: "AI" },
+  { name: "Make", abbr: "MK" },
+  { name: "Zapier", abbr: "ZP" },
+  { name: "WhatsApp", abbr: "WA" },
+  { name: "Vapi", abbr: "VP" },
+  { name: "Retell AI", abbr: "RT" },
+  { name: "Supabase", abbr: "SB" },
+];
+
+export function ToolStackSection() {
   return (
-    <section className={cn("py-16 md:py-20", className)}>
+    <section className="py-10 md:py-14 border-y border-slate-200/50 dark:border-white/5 bg-slate-50/50 dark:bg-navy-900/30">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="eyebrow">Trusted tools</p>
-          <h2 className="mt-4 section-title text-slate-900 dark:text-white">
-            {title}
-          </h2>
-          <p className="mt-3 text-slate-600 dark:text-slate-400">{subtitle}</p>
-        </div>
-
-        <div className="relative mt-10 overflow-hidden mask-fade-x">
-          <div className="flex gap-3 animate-marquee whitespace-nowrap">
-            {list.map((t, idx) => (
-              <div
-                key={`${t.name}-${idx}`}
-                className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
-              >
-                <span className="h-2 w-2 rounded-full bg-gradient-to-br from-electric to-neon-purple" />
-                {t.name}
-                <span className="text-xs text-slate-500 dark:text-slate-400">
-                  · {t.category}
-                </span>
-              </div>
-            ))}
-          </div>
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-6">
+          Tools I build &amp; deploy with
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+          {trustedTools.map((tool, i) => (
+            <motion.div
+              key={tool.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: i * 0.04 }}
+              className="inline-flex items-center gap-2.5 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900/60 px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-electric dark:hover:border-electric/50 transition-colors group"
+            >
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-electric/10 to-neon-purple/10 text-[10px] font-bold text-electric group-hover:from-electric/20 group-hover:to-neon-purple/20 transition">
+                {tool.abbr}
+              </span>
+              {tool.name}
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

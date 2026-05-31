@@ -25,20 +25,22 @@ const steps = [
 
 export function HowIHelp() {
   return (
-    <section className="section relative bg-slate-50 dark:bg-navy-900/40">
+    <section className="py-16 md:py-20 relative bg-slate-50/50 dark:bg-navy-900/30 border-y border-slate-200/50 dark:border-white/5">
       <div className="container">
-        <div className="max-w-3xl">
-          <p className="eyebrow">How I help clients</p>
-          <h2 className="mt-4 section-title text-slate-900 dark:text-white text-balance">
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
+            How I help clients
+          </p>
+          <h2 className="mt-3 font-display text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
             A 4-step process built around revenue, not deliverables.
           </h2>
-          <p className="mt-4 text-slate-600 dark:text-slate-300">
-            Most agencies sell hours. I sell outcomes. Here's how a typical
+          <p className="mt-3 text-slate-600 dark:text-slate-300">
+            Most agencies sell hours. I sell outcomes. Here&apos;s how a typical
             engagement runs from first call to scaled system.
           </p>
         </div>
 
-        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
