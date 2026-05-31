@@ -30,6 +30,7 @@ export function GalleryCard({ project, index, onSelect }: GalleryCardProps) {
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover object-top transition duration-500 group-hover:scale-105"
+          unoptimized
         />
 
         {/* Hover overlay */}
