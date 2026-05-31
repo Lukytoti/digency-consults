@@ -8,15 +8,30 @@ export type Project = {
   result: string;
   metrics: { label: string; value: string }[];
   image: string;
+  screenshots: string[];
   accent: "electric" | "purple" | "green";
   featured?: boolean;
+  liveUrl?: string;
+  year?: string;
+  tags: string[];
 };
+
+export const projectCategories = [
+  "All",
+  "Websites",
+  "Funnels",
+  "CRM & Workflows",
+  "AI Agents",
+  "Landing Pages",
+] as const;
+
+export type ProjectCategory = (typeof projectCategories)[number];
 
 export const projects: Project[] = [
   {
     slug: "real-estate-lead-automation",
     title: "Real Estate Lead Automation",
-    category: "CRM Automation",
+    category: "CRM & Workflows",
     problem:
       "A real-estate brokerage was losing leads from Facebook ads because agents replied hours late and forgot to follow up.",
     solution:
@@ -29,15 +44,20 @@ export const projects: Project[] = [
       { label: "Booked viewings", value: "+220%" },
       { label: "Cost per booked call", value: "-41%" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=80",
+    image: "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
+    screenshots: [
+      "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
+      "https://i.postimg.cc/kB03CR8x/a2p-2.png",
+    ],
     accent: "electric",
     featured: true,
+    year: "2025",
+    tags: ["CRM", "Automation", "WhatsApp", "Lead Nurture"],
   },
   {
     slug: "webinar-funnel-automation",
     title: "Webinar Funnel Automation",
-    category: "Sales Funnel",
+    category: "Funnels",
     problem:
       "A coaching business had a 12% webinar show-up rate and an even lower close rate from their replays.",
     solution:
@@ -50,15 +70,19 @@ export const projects: Project[] = [
       { label: "Applications", value: "+350%" },
       { label: "Revenue / launch", value: "+5x" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1400&q=80",
+    image: "https://i.postimg.cc/FkkWCGP7/screencapture-pages-leadpages-2025-08-21-12-10-50.png",
+    screenshots: [
+      "https://i.postimg.cc/FkkWCGP7/screencapture-pages-leadpages-2025-08-21-12-10-50.png",
+    ],
     accent: "purple",
     featured: true,
+    year: "2025",
+    tags: ["Funnel", "Webinar", "Email", "High-Ticket"],
   },
   {
     slug: "whatsapp-ai-lead-qualification",
     title: "WhatsApp AI Lead Qualification System",
-    category: "AI Automation",
+    category: "AI Agents",
     problem:
       "A B2B agency burned hours every day manually qualifying inbound WhatsApp leads from ads and referrals.",
     solution:
@@ -71,15 +95,20 @@ export const projects: Project[] = [
       { label: "Qualified leads", value: "+60%" },
       { label: "Avg reply time", value: "8s" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1400&q=80",
+    image: "https://i.postimg.cc/ykM4K395/A2p-3.png",
+    screenshots: [
+      "https://i.postimg.cc/ykM4K395/A2p-3.png",
+      "https://i.postimg.cc/kB03CR8x/a2p-2.png",
+    ],
     accent: "green",
     featured: true,
+    year: "2025",
+    tags: ["AI", "WhatsApp", "Lead Qualification", "Automation"],
   },
   {
     slug: "ghl-pipeline-workflow-setup",
     title: "GHL Pipeline & Workflow Setup",
-    category: "CRM Setup",
+    category: "CRM & Workflows",
     problem:
       "A 6-person agency had GHL but used <10% of it — no pipelines, no automations, no reporting.",
     solution:
@@ -92,14 +121,18 @@ export const projects: Project[] = [
       { label: "Adoption", value: "100%" },
       { label: "Forecast accuracy", value: "92%" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+    image: "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
+    screenshots: [
+      "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
+    ],
     accent: "electric",
+    year: "2024",
+    tags: ["CRM", "GHL", "Pipeline", "Reporting"],
   },
   {
     slug: "ai-voice-assistant-setup",
     title: "AI Voice Assistant Setup",
-    category: "AI Voice",
+    category: "AI Agents",
     problem:
       "A dental clinic was missing 35% of after-hours calls and losing high-value bookings to competitors.",
     solution:
@@ -112,14 +145,18 @@ export const projects: Project[] = [
       { label: "Extra revenue", value: "$18k/mo" },
       { label: "Setup time", value: "8 days" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1400&q=80",
+    image: "https://i.postimg.cc/kB03CR8x/a2p-2.png",
+    screenshots: [
+      "https://i.postimg.cc/kB03CR8x/a2p-2.png",
+    ],
     accent: "purple",
+    year: "2025",
+    tags: ["AI", "Voice Agent", "VAPI", "Healthcare"],
   },
   {
     slug: "email-sms-followup-automation",
     title: "Email & SMS Follow-Up Automation",
-    category: "Marketing Automation",
+    category: "CRM & Workflows",
     problem:
       "An online course business had thousands of cold leads sitting in their list with no follow-up system.",
     solution:
@@ -132,34 +169,18 @@ export const projects: Project[] = [
       { label: "Revenue", value: "$63k / 30d" },
       { label: "ROI", value: "42x" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&w=1400&q=80",
-    accent: "green",
-  },
-  {
-    slug: "sales-funnel-build",
-    title: "Sales Funnel Build",
-    category: "Funnel",
-    problem:
-      "A SaaS founder had a great offer but a single 'Buy Now' page that converted at 0.6%.",
-    solution:
-      "Rebuilt as a multi-step funnel: lead magnet → VSL → application → checkout, with abandoned-cart automation and a 7-day onboarding sequence.",
-    tools: ["Next.js", "GoHighLevel", "Stripe", "Resend"],
-    result:
-      "Conversion went from 0.6% to 4.8%. MRR grew 3.4x in 90 days.",
-    metrics: [
-      { label: "Conversion", value: "0.6% → 4.8%" },
-      { label: "MRR growth", value: "+340%" },
-      { label: "CAC", value: "-38%" },
+    image: "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
+    screenshots: [
+      "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
     ],
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80",
-    accent: "electric",
+    accent: "green",
+    year: "2024",
+    tags: ["Email", "SMS", "Reactivation", "Automation"],
   },
   {
-    slug: "website-design-project",
-    title: "Premium Website Design Project",
-    category: "Web Design",
+    slug: "premium-business-website",
+    title: "Premium Business Website",
+    category: "Websites",
     problem:
       "A consultancy looked like a freelancer — outdated WordPress site, slow load times, no SEO and no clear CTA.",
     solution:
@@ -172,8 +193,164 @@ export const projects: Project[] = [
       { label: "Qualified calls", value: "2 → 18 / mo" },
       { label: "Bounce rate", value: "-52%" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1400&q=80",
+    image: "https://i.postimg.cc/yJWFTxpR/website1.png",
+    screenshots: [
+      "https://i.postimg.cc/yJWFTxpR/website1.png",
+      "https://i.postimg.cc/SjYghTrn/website3.png",
+      "https://i.postimg.cc/YLFRz09M/website4.png",
+    ],
     accent: "purple",
+    featured: true,
+    year: "2025",
+    tags: ["Website", "Next.js", "SEO", "Design"],
+  },
+  {
+    slug: "ecommerce-landing-page",
+    title: "E-Commerce Landing Page",
+    category: "Landing Pages",
+    problem:
+      "A SaaS founder had a great offer but a single 'Buy Now' page that converted at 0.6%.",
+    solution:
+      "Rebuilt as a multi-step funnel: lead magnet → VSL → application → checkout, with abandoned-cart automation and a 7-day onboarding sequence.",
+    tools: ["Next.js", "GoHighLevel", "Stripe", "Resend"],
+    result:
+      "Conversion went from 0.6% to 4.8%. MRR grew 3.4x in 90 days.",
+    metrics: [
+      { label: "Conversion", value: "0.6% → 4.8%" },
+      { label: "MRR growth", value: "+340%" },
+      { label: "CAC", value: "-38%" },
+    ],
+    image: "https://i.postimg.cc/TKtVmg9m/website6.png",
+    screenshots: [
+      "https://i.postimg.cc/TKtVmg9m/website6.png",
+    ],
+    accent: "electric",
+    year: "2025",
+    tags: ["Landing Page", "Conversion", "Funnel", "Stripe"],
+  },
+  {
+    slug: "dark-theme-saas-website",
+    title: "Dark Theme SaaS Website",
+    category: "Websites",
+    problem:
+      "A tech startup needed a modern dark-themed website to position themselves as premium in their niche.",
+    solution:
+      "Designed a sleek dark-mode-first website with glassmorphism UI, animated sections, blog CMS and integrated lead capture forms.",
+    tools: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
+    result:
+      "Time on site increased 65%. Demo requests grew 4x in the first month after launch.",
+    metrics: [
+      { label: "Time on site", value: "+65%" },
+      { label: "Demo requests", value: "4x" },
+      { label: "Load time", value: "1.2s" },
+    ],
+    image: "https://i.postimg.cc/y3TgKCpL/website10.png",
+    screenshots: [
+      "https://i.postimg.cc/y3TgKCpL/website10.png",
+      "https://i.postimg.cc/v1p6Lz6P/website11.png",
+      "https://i.postimg.cc/QVgW1cN5/website12.png",
+    ],
+    accent: "purple",
+    year: "2025",
+    tags: ["Website", "SaaS", "Dark Theme", "Premium"],
+  },
+  {
+    slug: "agency-portfolio-website",
+    title: "Agency Portfolio Website",
+    category: "Websites",
+    problem:
+      "A creative agency's portfolio site was built on outdated tech, looked generic, and failed to showcase their best work effectively.",
+    solution:
+      "Built a visually stunning portfolio site with project galleries, case study pages, smooth animations and a booking system integrated with their CRM.",
+    tools: ["Next.js", "Tailwind CSS", "Framer Motion", "GoHighLevel"],
+    result:
+      "Inbound leads doubled. Average proposal value increased 40% due to premium positioning.",
+    metrics: [
+      { label: "Inbound leads", value: "+100%" },
+      { label: "Avg proposal", value: "+40%" },
+      { label: "Page speed", value: "96/100" },
+    ],
+    image: "https://i.postimg.cc/4HRVZ5fy/website7.png",
+    screenshots: [
+      "https://i.postimg.cc/4HRVZ5fy/website7.png",
+      "https://i.postimg.cc/jCyycGc5/website8.png",
+      "https://i.postimg.cc/xcRMDMWV/website9.png",
+    ],
+    accent: "green",
+    year: "2025",
+    tags: ["Website", "Portfolio", "Agency", "Design"],
+  },
+  {
+    slug: "multi-page-corporate-site",
+    title: "Multi-Page Corporate Site",
+    category: "Websites",
+    problem:
+      "A growing services company needed a professional multi-page website to replace their single-page Wix site.",
+    solution:
+      "Designed and developed a comprehensive corporate website with services pages, team section, blog, contact forms and SEO optimization.",
+    tools: ["Next.js", "Tailwind CSS", "Vercel", "Supabase"],
+    result:
+      "Organic traffic grew 280% in 90 days. Contact form submissions increased 5x.",
+    metrics: [
+      { label: "Organic traffic", value: "+280%" },
+      { label: "Form submissions", value: "5x" },
+      { label: "SEO keywords", value: "Top 10" },
+    ],
+    image: "https://i.postimg.cc/d7zTmBTz/website13.png",
+    screenshots: [
+      "https://i.postimg.cc/d7zTmBTz/website13.png",
+    ],
+    accent: "electric",
+    year: "2025",
+    tags: ["Website", "Corporate", "SEO", "Multi-page"],
+  },
+  {
+    slug: "leadpages-sales-funnel",
+    title: "LeadPages Sales Funnel",
+    category: "Funnels",
+    problem:
+      "A consultant was running ads but had no proper funnel — traffic went to a generic homepage with no conversion path.",
+    solution:
+      "Built a high-converting LeadPages funnel with opt-in, thank-you, VSL, and booking pages — fully integrated with GHL for follow-up automation.",
+    tools: ["LeadPages", "GoHighLevel", "Stripe", "Calendly"],
+    result:
+      "Opt-in rate hit 38%. Cost per lead dropped 55% while quality improved.",
+    metrics: [
+      { label: "Opt-in rate", value: "38%" },
+      { label: "CPL reduction", value: "-55%" },
+      { label: "Booked calls", value: "+180%" },
+    ],
+    image: "https://i.postimg.cc/FkkWCGP7/screencapture-pages-leadpages-2025-08-21-12-10-50.png",
+    screenshots: [
+      "https://i.postimg.cc/FkkWCGP7/screencapture-pages-leadpages-2025-08-21-12-10-50.png",
+    ],
+    accent: "purple",
+    year: "2025",
+    tags: ["Funnel", "LeadPages", "Ads", "Lead Generation"],
+  },
+  {
+    slug: "a2p-compliance-setup",
+    title: "A2P 10DLC Compliance Setup",
+    category: "CRM & Workflows",
+    problem:
+      "A client's SMS campaigns were getting filtered and blocked because they weren't A2P compliant.",
+    solution:
+      "Handled full A2P 10DLC registration — brand registration, campaign registration, number provisioning and compliance documentation — so their messages actually get delivered.",
+    tools: ["GoHighLevel", "Twilio", "LC Phone"],
+    result:
+      "SMS deliverability went from 62% to 97%. No more filtered messages.",
+    metrics: [
+      { label: "Deliverability", value: "62% → 97%" },
+      { label: "Blocked msgs", value: "0" },
+      { label: "Setup time", value: "5 days" },
+    ],
+    image: "https://i.postimg.cc/ykM4K395/A2p-3.png",
+    screenshots: [
+      "https://i.postimg.cc/ykM4K395/A2p-3.png",
+      "https://i.postimg.cc/kB03CR8x/a2p-2.png",
+    ],
+    accent: "green",
+    year: "2025",
+    tags: ["SMS", "Compliance", "A2P", "Deliverability"],
   },
 ];
