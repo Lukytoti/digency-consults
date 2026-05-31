@@ -8,6 +8,7 @@ import { CaseStudyHighlights } from "@/components/sections/CaseStudyHighlights";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
+import { CertificationsPreview } from "@/components/sections/CertificationsPreview";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTASection } from "@/components/sections/CTASection";
 import { siteConfig } from "@/lib/site-config";
@@ -54,6 +55,7 @@ export default function HomePage() {
       <ResultsSection />
       <CaseStudyHighlights />
       <SocialProofSection />
+      <CertificationsPreview />
       <TestimonialsSection limit={6} />
       <FAQ />
       <CTASection />

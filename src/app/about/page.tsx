@@ -7,6 +7,8 @@ import { CTASection } from "@/components/sections/CTASection";
 import { ToolStackSection } from "@/components/sections/ToolStackSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
+import { CertificationsSection } from "@/components/certifications";
+import { certifications } from "@/data/certifications";
 
 export const metadata: Metadata = {
   title: "About Me — AI & CRM Infrastructure Engineer",
@@ -15,8 +17,33 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const certificationsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.founder.name,
+    jobTitle: siteConfig.founder.role,
+    url: siteConfig.url,
+    hasCredential: certifications.map((cert) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: cert.name,
+      credentialCategory: cert.category,
+      recognizedBy: {
+        "@type": "Organization",
+        name: cert.issuer,
+      },
+      dateCreated: cert.date,
+      ...(cert.credentialId && { identifier: cert.credentialId }),
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(certificationsJsonLd),
+        }}
+      />
       <section className="relative overflow-hidden pt-32 pb-16">
         <div className="glow-orb h-[400px] w-[400px] -left-32 top-0 bg-electric" />
         <div className="glow-orb h-[400px] w-[400px] -right-32 top-32 bg-neon-purple" />
@@ -214,6 +241,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <CertificationsSection />
       <ToolStackSection />
       <ResultsSection />
       <SocialProofSection />
