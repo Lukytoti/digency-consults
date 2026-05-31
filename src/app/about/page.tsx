@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Linkedin, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { CTASection } from "@/components/sections/CTASection";
@@ -53,12 +54,42 @@ export default function AboutPage() {
           </div>
 
           <div className="relative">
+            {/* Founder photo */}
+            <div className="relative rounded-3xl overflow-hidden glass-card p-2 mb-6">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image
+                  src="/tobi.png"
+                  alt="Oluwatobi Olowookere — AI & CRM Infrastructure Engineer"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover object-top"
+                  priority
+                  quality={100}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="font-display text-xl font-bold text-white">
+                    {siteConfig.founder.name}
+                  </p>
+                  <p className="text-sm text-slate-300">
+                    {siteConfig.founder.role}
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="relative rounded-3xl glass-card p-2">
               <div className="rounded-2xl bg-gradient-to-br from-navy-900 via-navy-950 to-black p-8 text-white">
                 <div className="flex items-center gap-3">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-electric to-neon-purple text-white font-bold">
-                    OO
-                  </span>
+                  <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-electric">
+                    <Image
+                      src="/tobi.png"
+                      alt={siteConfig.founder.name}
+                      fill
+                      className="object-cover"
+                      quality={100}
+                    />
+                  </div>
                   <div>
                     <p className="font-display text-lg font-semibold">
                       {siteConfig.founder.name}
