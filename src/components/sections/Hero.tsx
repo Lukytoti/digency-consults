@@ -46,7 +46,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden pt-28 md:pt-36 pb-16 md:pb-24">
+    <section className="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 pb-12 sm:pb-16 md:pb-24">
       {/* Background orbs */}
       <div className="glow-orb h-[500px] w-[500px] -left-40 top-0 bg-electric" />
       <div className="glow-orb h-[500px] w-[500px] -right-40 top-32 bg-neon-purple" />
@@ -54,7 +54,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white dark:to-navy-950" />
 
       <div className="container relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Text content */}
           <div className="max-w-2xl">
             <motion.div
@@ -71,7 +71,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance text-slate-900 dark:text-white"
+              className="mt-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance text-slate-900 dark:text-white"
             >
               I Build Systems That{" "}
               <span className="gradient-text">Capture, Nurture &amp; Convert</span>{" "}
@@ -99,11 +99,11 @@ export function Hero() {
                 href={siteConfig.contact.calendar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary px-6 py-3.5"
+                className="btn-primary px-6 py-3.5 w-full sm:w-auto min-h-[48px] justify-center"
               >
                 Book a Strategy Call <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/portfolio" className="btn-secondary px-6 py-3.5">
+              <Link href="/portfolio" className="btn-secondary px-6 py-3.5 w-full sm:w-auto min-h-[48px] justify-center">
                 <Zap className="h-4 w-4" /> View My Work
               </Link>
             </motion.div>
@@ -130,7 +130,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-8 grid grid-cols-3 gap-4"
+              className="mt-8 grid grid-cols-3 gap-2 sm:gap-4"
             >
               {[
                 { value: "<60s", label: "Lead Response" },
@@ -138,10 +138,10 @@ export function Hero() {
                 { value: "+220%", label: "Booked Calls" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center sm:text-left">
-                  <p className="font-display text-2xl md:text-3xl font-bold gradient-text">
+                  <p className="font-display text-xl sm:text-2xl md:text-3xl font-bold gradient-text">
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-[10px] sm:text-xs text-slate-500 dark:text-slate-400">
                     {stat.label}
                   </p>
                 </div>

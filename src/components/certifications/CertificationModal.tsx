@@ -54,7 +54,7 @@ export function CertificationModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-8"
           onClick={onClose}
         >
           {/* Backdrop */}
@@ -66,13 +66,13 @@ export function CertificationModal({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-            className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-navy-900 shadow-2xl"
+            className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl sm:rounded-3xl bg-white dark:bg-navy-900 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 rounded-full bg-black/50 backdrop-blur p-2 text-white hover:bg-black/70 transition-colors"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 rounded-full bg-black/50 backdrop-blur p-2.5 sm:p-2 text-white hover:bg-black/70 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Close modal"
             >
               <X className="h-5 w-5" />
@@ -160,20 +160,20 @@ export function CertificationModal({
             </div>
 
             {/* Certificate details */}
-            <div className="p-6 md:p-8">
-              <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-start justify-between gap-4">
                 <div>
                   <span className="inline-flex items-center rounded-full bg-electric/10 dark:bg-electric/20 px-3 py-1 text-xs font-semibold text-electric">
                     {certification.category}
                   </span>
-                  <h2 className="mt-3 font-display text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
+                  <h2 className="mt-3 font-display text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                     {certification.name}
                   </h2>
                 </div>
                 <a
                   href={certification.file}
                   download
-                  className="btn-primary text-sm inline-flex items-center gap-2"
+                  className="btn-primary text-sm inline-flex items-center gap-2 w-full sm:w-auto justify-center min-h-[48px]"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

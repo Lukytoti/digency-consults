@@ -31,6 +31,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   body {
@@ -38,6 +39,9 @@
     font-family: var(--font-inter), system-ui, sans-serif;
     line-height: 1.65;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-size: 16px;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   ::selection {
@@ -91,7 +95,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-navy-950;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-navy-950 min-h-[44px];
   }
 
   .btn-primary {
@@ -163,5 +167,12 @@
       black 90%,
       transparent
     );
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

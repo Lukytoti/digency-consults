@@ -65,7 +65,7 @@ export default function AboutPage() {
                 href={siteConfig.contact.calendar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary px-6 py-3.5"
+                className="btn-primary px-6 py-3.5 w-full sm:w-auto min-h-[48px] justify-center"
               >
                 Book a Strategy Call <ArrowRight className="h-4 w-4" />
               </Link>
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary px-6 py-3.5"
+                className="btn-secondary px-6 py-3.5 w-full sm:w-auto min-h-[48px] justify-center"
               >
                 <Linkedin className="h-4 w-4" /> Connect on LinkedIn
               </a>
@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="relative">
             {/* Founder photo */}
             <div className="relative rounded-3xl overflow-hidden glass-card p-2 mb-6">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+              <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl overflow-hidden">
                 <Image
                   src="/tobi.png"
                   alt="Oluwatobi Olowookere — AI & CRM Infrastructure Engineer"

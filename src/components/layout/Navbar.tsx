@@ -84,7 +84,7 @@ export function Navbar() {
             type="button"
             aria-label="Open menu"
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 dark:border-white/10"
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 dark:border-white/10"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -98,7 +98,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5"
+                className="rounded-lg px-3 py-3 min-h-[44px] flex items-center text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5"
               >
                 {item.label}
               </Link>
@@ -107,7 +107,7 @@ export function Navbar() {
               href={siteConfig.contact.calendar}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary mt-2 w-full justify-center"
+              className="btn-primary mt-2 w-full justify-center min-h-[48px]"
             >
               Book a Strategy Call
             </a>

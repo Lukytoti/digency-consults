@@ -31,9 +31,9 @@ export default function ContactPage() {
       </section>
 
       <section className="pb-24">
-        <div className="container grid lg:grid-cols-5 gap-8 items-start">
+        <div className="container grid lg:grid-cols-5 gap-6 sm:gap-8 items-start">
           <div className="lg:col-span-2 space-y-4">
-            <div className="rounded-2xl glass-card p-6">
+            <div className="rounded-2xl glass-card p-5 sm:p-6">
               <p className="text-sm font-semibold text-slate-900 dark:text-white">
                 Fastest ways to reach me
               </p>
@@ -43,9 +43,9 @@ export default function ContactPage() {
                     href={siteConfig.contact.calendar}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 group text-slate-700 dark:text-slate-200"
+                    className="flex items-center gap-3 group text-slate-700 dark:text-slate-200 min-h-[44px]"
                   >
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-electric to-neon-purple text-white">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-electric to-neon-purple text-white flex-shrink-0">
                       <CalendarCheck className="h-4 w-4" />
                     </span>
                     Book a 30-min Strategy Call
@@ -56,9 +56,9 @@ export default function ContactPage() {
                     href={siteConfig.contact.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
+                    className="flex items-center gap-3 text-slate-700 dark:text-slate-200 min-h-[44px]"
                   >
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 text-white">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500 text-white flex-shrink-0">
                       <MessageCircle className="h-4 w-4" />
                     </span>
                     WhatsApp me directly
@@ -67,12 +67,12 @@ export default function ContactPage() {
                 <li>
                   <a
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
+                    className="flex items-center gap-3 text-slate-700 dark:text-slate-200 min-h-[44px]"
                   >
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-slate-700 text-white">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-slate-700 text-white flex-shrink-0">
                       <Mail className="h-4 w-4" />
                     </span>
-                    {siteConfig.contact.email}
+                    <span className="break-all">{siteConfig.contact.email}</span>
                   </a>
                 </li>
                 <li>
@@ -80,9 +80,9 @@ export default function ContactPage() {
                     href={siteConfig.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
+                    className="flex items-center gap-3 text-slate-700 dark:text-slate-200 min-h-[44px]"
                   >
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white flex-shrink-0">
                       <Linkedin className="h-4 w-4" />
                     </span>
                     Connect on LinkedIn
@@ -115,7 +115,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 rounded-3xl glass-card p-6 md:p-8">
+          <div className="lg:col-span-3 rounded-3xl glass-card p-4 sm:p-6 md:p-8">
             <ContactForm />
           </div>
         </div>

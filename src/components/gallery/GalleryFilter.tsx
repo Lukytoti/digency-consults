@@ -10,13 +10,14 @@ interface GalleryFilterProps {
 
 export function GalleryFilter({ active, onChange }: GalleryFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2">
-      {projectCategories.map((cat) => (
-        <button
-          key={cat}
-          onClick={() => onChange(cat)}
-          className="relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200"
-        >
+    <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
+      <div className="flex gap-2 min-w-max sm:min-w-0 sm:flex-wrap">
+        {projectCategories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => onChange(cat)}
+            className="relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 min-h-[44px] whitespace-nowrap"
+          >
           {active === cat && (
             <motion.span
               layoutId="gallery-filter-active"
@@ -35,6 +36,7 @@ export function GalleryFilter({ active, onChange }: GalleryFilterProps) {
           </span>
         </button>
       ))}
+      </div>
     </div>
   );
 }

@@ -74,14 +74,14 @@ export function ContactForm() {
           required
           rows={5}
           placeholder="What are you trying to build, fix or scale?"
-          className="mt-2 w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900 px-4 py-3 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30"
+          className="mt-2 w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900 px-4 py-3 text-base sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30"
         />
       </div>
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn-primary w-full justify-center px-6 py-3.5 disabled:opacity-60"
+        className="btn-primary w-full justify-center px-6 py-3.5 min-h-[48px] disabled:opacity-60"
       >
         {status === "loading" ? (
           <>
@@ -119,7 +119,7 @@ function Field({
       </label>
       <input
         {...props}
-        className="mt-2 w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30"
+        className="mt-2 w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900 px-4 py-3 text-base sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30 min-h-[44px]"
       />
     </div>
   );
@@ -141,7 +141,7 @@ function SelectField({
       </label>
       <select
         name={name}
-        className="mt-2 w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900 px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30"
+        className="mt-2 w-full rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-navy-900 px-4 py-3 text-base sm:text-sm text-slate-900 dark:text-white focus:border-electric focus:outline-none focus:ring-2 focus:ring-electric/30 min-h-[44px]"
       >
         <option value="">Select...</option>
         {options.map((o) => (

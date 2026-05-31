@@ -59,7 +59,7 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex justify-center gap-8 md:gap-12"
+            className="mt-8 flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
           >
             {[
               { value: `${projects.length}+`, label: "Projects Shipped" },
