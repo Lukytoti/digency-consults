@@ -87,7 +87,7 @@ export default function ProjectDetailPage({ params }: Props) {
                 sizes="100vw"
                 className="object-cover object-top"
                 priority
-                unoptimized
+                quality={100}
               />
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function ProjectDetailPage({ params }: Props) {
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"
                       className="object-cover object-top"
-                      unoptimized
+                      quality={100}
                     />
                   </div>
                 ))}
@@ -222,7 +222,7 @@ export default function ProjectDetailPage({ params }: Props) {
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover object-top transition duration-500 group-hover:scale-105"
-                      unoptimized
+                      quality={100}
                     />
                     <span className="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/50 backdrop-blur px-3 py-1 text-xs text-white">
                       {p.category}

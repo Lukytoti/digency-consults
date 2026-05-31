@@ -11,27 +11,27 @@ const showcaseProjects = [
   {
     title: "Premium Website Design",
     category: "Web Design",
-    image: "https://i.postimg.cc/yJWFTxpR/website1.png",
+    image: "/projects/website1.png",
   },
   {
     title: "Sales Funnel & Landing Page",
     category: "Funnel Design",
-    image: "https://i.postimg.cc/FkkWCGP7/screencapture-pages-leadpages-2025-08-21-12-10-50.png",
+    image: "/projects/website15.png",
   },
   {
     title: "GHL Workflow Automation",
     category: "CRM Automation",
-    image: "https://i.postimg.cc/D89kh4LV/GHL-workflow.png",
+    image: "/projects/ghl-workflow.png",
   },
   {
     title: "Modern Business Website",
     category: "Web Design",
-    image: "https://i.postimg.cc/y3TgKCpL/website10.png",
+    image: "/projects/website10.png",
   },
   {
     title: "A2P Compliance Dashboard",
     category: "CRM Setup",
-    image: "https://i.postimg.cc/ykM4K395/A2p-3.png",
+    image: "/projects/a2p-3.png",
   },
 ];
 
@@ -191,7 +191,7 @@ export function Hero() {
                       sizes="(min-width: 1024px) 50vw, 100vw"
                       className="object-cover object-top"
                       priority={currentIndex === 0}
-                      unoptimized
+                      quality={100}
                     />
                   </motion.div>
                 </AnimatePresence>
