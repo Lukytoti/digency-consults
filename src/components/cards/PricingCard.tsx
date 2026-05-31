@@ -79,7 +79,7 @@ export function PricingCard({ tier }: { tier: PricingTier }) {
       <Link
         href={siteConfig.contact.calendar}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className={cn(
           "mt-8 flex w-full justify-center",
           tier.highlight ? "btn-primary" : "btn-outline"

@@ -9,7 +9,7 @@ import { ResultsSection } from "@/components/sections/ResultsSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 
 export const metadata: Metadata = {
-  title: "About — AI & CRM Infrastructure Engineer",
+  title: "About Me — AI & CRM Infrastructure Engineer",
   description:
     "I'm Oluwatobi Olowookere, an AI & CRM Infrastructure Engineer building backend automation, CRM systems and revenue engines for businesses worldwide.",
 };
@@ -24,7 +24,7 @@ export default function AboutPage() {
 
         <div className="container relative grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="eyebrow">About Digency Consults</p>
+            <p className="eyebrow">About Me</p>
             <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance text-slate-900 dark:text-white">
               I'm <span className="gradient-text">Oluwatobi Olowookere</span> — and I build the AI &amp; CRM infrastructure most agencies are missing.
             </h1>
@@ -37,7 +37,7 @@ export default function AboutPage() {
               <Link
                 href={siteConfig.contact.calendar}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-primary px-6 py-3.5"
               >
                 Book a Strategy Call <ArrowRight className="h-4 w-4" />
@@ -45,7 +45,7 @@ export default function AboutPage() {
               <a
                 href={siteConfig.social.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-secondary px-6 py-3.5"
               >
                 <Linkedin className="h-4 w-4" /> Connect on LinkedIn
@@ -122,7 +122,7 @@ export default function AboutPage() {
                 <a
                   href={siteConfig.social.linkedin}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center gap-2 text-sm text-electric"
                 >
                   <Linkedin className="h-4 w-4" /> View LinkedIn profile

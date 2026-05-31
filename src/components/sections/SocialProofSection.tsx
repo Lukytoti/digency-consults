@@ -27,7 +27,7 @@ export function SocialProofSection() {
             <a
               href={siteConfig.social.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mt-6 btn-primary inline-flex"
             >
               <Linkedin className="h-4 w-4" /> Connect on LinkedIn
@@ -72,7 +72,7 @@ export function SocialProofSection() {
                     key={p.title}
                     href={siteConfig.social.linkedin}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="group rounded-2xl glass-card p-5 transition hover:-translate-y-1 hover:shadow-glow"
                   >
                     <div className="flex items-center gap-2 text-xs text-electric font-medium">

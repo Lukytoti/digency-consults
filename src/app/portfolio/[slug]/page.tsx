@@ -66,7 +66,7 @@ export default function ProjectDetailPage({ params }: Props) {
             <Link
               href={project.liveUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-electric hover:underline"
             >
               <ExternalLink className="h-4 w-4" /> Visit Live Site

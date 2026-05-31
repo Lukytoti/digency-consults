@@ -98,7 +98,7 @@ export function Hero() {
               <Link
                 href={siteConfig.contact.calendar}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-primary px-6 py-3.5"
               >
                 Book a Strategy Call <ArrowRight className="h-4 w-4" />

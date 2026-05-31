@@ -42,7 +42,7 @@ export default function ContactPage() {
                   <a
                     href={siteConfig.contact.calendar}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 group text-slate-700 dark:text-slate-200"
                   >
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-electric to-neon-purple text-white">
@@ -53,9 +53,9 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <a
-                    href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                    href={siteConfig.contact.whatsapp}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
                   >
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 text-white">
@@ -79,7 +79,7 @@ export default function ContactPage() {
                   <a
                     href={siteConfig.social.linkedin}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
                   >
                     <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white">

@@ -72,12 +72,14 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link
-            href="/contact"
+          <a
+            href={siteConfig.contact.calendar}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:inline-flex btn-primary px-4 py-2 text-sm"
           >
             Book a Call
-          </Link>
+          </a>
           <button
             type="button"
             aria-label="Open menu"
@@ -101,12 +103,14 @@ export function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.contact.calendar}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary mt-2 w-full justify-center"
             >
               Book a Strategy Call
-            </Link>
+            </a>
           </div>
         </div>
       )}

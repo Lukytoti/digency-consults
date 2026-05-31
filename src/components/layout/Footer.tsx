@@ -36,11 +36,10 @@ export function Footer() {
           </h4>
           <ul className="mt-4 space-y-2 text-sm">
             {[
-              { label: "About", href: "/about" },
+              { label: "About Me", href: "/about" },
               { label: "Services", href: "/services" },
               { label: "Portfolio", href: "/portfolio" },
               { label: "Case Studies", href: "/case-studies" },
-              { label: "Pricing", href: "/pricing" },
               { label: "Blog", href: "/blog" },
               { label: "Contact", href: "/contact" },
             ].map((l) => (
@@ -65,7 +64,7 @@ export function Footer() {
               <a
                 href={siteConfig.social.linkedin}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
               >
                 <Linkedin className="h-4 w-4" /> LinkedIn
@@ -82,9 +81,9 @@ export function Footer() {
             </li>
             <li>
               <a
-                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                href={siteConfig.contact.whatsapp}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp
@@ -94,7 +93,7 @@ export function Footer() {
               <a
                 href={siteConfig.contact.calendar}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
               >
                 Book a Strategy Call
@@ -113,7 +112,7 @@ export function Footer() {
               href={siteConfig.founder.linkedin}
               className="text-electric hover:underline"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {siteConfig.founder.name}
             </a>

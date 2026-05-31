@@ -20,10 +20,10 @@ export const siteConfig = {
   contact: {
     email: "hello@digencyconsults.com",
     whatsapp:
-      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348000000000",
+      process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/447448309532",
     calendar:
       process.env.NEXT_PUBLIC_CALENDAR_URL ??
-      "https://calendly.com/digency-consults/strategy-call",
+      "https://cal.com/oluwatobi-olowookere-3055pb/30min",
   },
   social: {
     linkedin:
@@ -35,11 +35,10 @@ export const siteConfig = {
   },
   nav: [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "About Me", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Pricing", href: "/pricing" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],

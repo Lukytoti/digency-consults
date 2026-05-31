@@ -159,7 +159,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   <Link
                     href={project.liveUrl}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="btn-outline text-sm"
                   >
                     <ExternalLink className="h-4 w-4" /> Visit Live

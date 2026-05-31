@@ -28,15 +28,15 @@ export function CTASection({
               <Link
                 href={siteConfig.contact.calendar}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-primary px-6 py-3.5"
               >
                 Book a Strategy Call <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href={`https://wa.me/${siteConfig.contact.whatsapp}`}
+                href={siteConfig.contact.whatsapp}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn px-6 py-3.5 border border-white/20 text-white hover:bg-white/10"
               >
                 <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
