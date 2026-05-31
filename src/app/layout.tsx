@@ -6,7 +6,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { WhatsAppButton } from "@/components/widgets/WhatsAppButton";
+import { FloatingContactWidget } from "@/components/widgets/FloatingContactWidget";
+import { SmartChatWidget } from "@/components/widgets/SmartChatWidget";
 import { AnalyticsScripts } from "@/components/widgets/Analytics";
 import { siteConfig } from "@/lib/site-config";
 
@@ -78,7 +79,8 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />
-          <WhatsAppButton />
+          <FloatingContactWidget />
+          <SmartChatWidget />
           <AnalyticsScripts />
           <Analytics />
           <SpeedInsights />

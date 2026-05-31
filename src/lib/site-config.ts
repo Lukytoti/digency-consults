@@ -5,8 +5,7 @@ export const siteConfig = {
     "AI & CRM Infrastructure Engineer building backend automation, CRM systems and revenue engines.",
   description:
     "I help businesses build websites, sales funnels, CRM systems and AI automations using GoHighLevel, n8n, OpenAI, WhatsApp and email — so they can capture leads, follow up automatically and close more clients.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://digencyconsults.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://digencyconsults.com",
   ogImage: "/og.png",
   founder: {
     name: "Oluwatobi Olowookere",
@@ -19,19 +18,22 @@ export const siteConfig = {
   },
   contact: {
     email: "hello@digencyconsults.com",
-    whatsapp:
-      process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "2348000000000",
+    // Raw number for `tel:` and `wa.me/` links
+    whatsapp: "447448309532",
+    whatsappUrl: "https://wa.me/447448309532",
     calendar:
       process.env.NEXT_PUBLIC_CALENDAR_URL ??
-      "https://calendly.com/digency-consults/strategy-call",
+      "https://cal.com/oluwatobi-olowookere-3055pb/30min",
   },
   social: {
     linkedin:
       process.env.NEXT_PUBLIC_LINKEDIN_URL ??
       "https://www.linkedin.com/in/oluwatobi-olowookere-720b3610a/",
-    twitter: "https://twitter.com/digencyconsults",
-    youtube: "https://youtube.com/@digencyconsults",
-    instagram: "https://instagram.com/digencyconsults",
+    facebook: "https://web.facebook.com/olowookere.tobi.5",
+    fiverr: "https://www.fiverr.com/s/m58ayBZ",
+    upwork:
+      "https://www.upwork.com/freelancers/~013a25999ab2b106f7?mp_source=share",
+    whatsapp: "https://wa.me/447448309532",
   },
   nav: [
     { label: "Home", href: "/" },
