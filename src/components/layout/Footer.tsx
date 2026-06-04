@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, ArrowUpRight, Calendar } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { WhatsAppLogo, LinkedInLogo } from "@/components/icons/BrandIcons";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Footer() {
   return (
@@ -11,13 +11,7 @@ export function Footer() {
       <div className="container py-12 sm:py-16 md:py-20 grid gap-10 sm:gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-2 max-w-md">
           <Link href="/" className="inline-flex">
-            <Image
-              src="/branding/digency-logo.png"
-              alt="Digency Consults"
-              width={180}
-              height={44}
-              className="w-[160px] h-auto object-contain"
-            />
+            <BrandLogo size="small" />
           </Link>
           <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
             {siteConfig.tagline} GoHighLevel • n8n • OpenAI • WhatsApp •

@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 // ─── Navigation Items ────────────────────────────────────────────────────────
 const navItems = [
@@ -113,14 +113,7 @@ export function Navbar() {
                 href="/"
                 className="group shrink-0 flex items-center"
               >
-                <Image
-                  src="/branding/digency-logo.png"
-                  alt="Digency Consults"
-                  width={220}
-                  height={50}
-                  className="w-[140px] sm:w-[170px] lg:w-[200px] h-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-                  priority
-                />
+                <BrandLogo className="transition-transform duration-300 group-hover:scale-[1.03]" />
               </Link>
 
               {/* ─── Center: Navigation ──────────────────────────── */}
