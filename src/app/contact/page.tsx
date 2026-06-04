@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { CalendarCheck, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { CalendarCheck, Mail } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { siteConfig } from "@/lib/site-config";
+import { WhatsAppLogo, LinkedInLogo } from "@/components/icons/BrandIcons";
 
 export const metadata: Metadata = {
   title: "Contact / Book a Call — Digency Consults",
@@ -58,8 +59,8 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-slate-700 dark:text-slate-200 min-h-[44px]"
                   >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500 text-white flex-shrink-0">
-                      <MessageCircle className="h-4 w-4" />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#25D366] text-white flex-shrink-0">
+                      <WhatsAppLogo className="h-4 w-4" />
                     </span>
                     WhatsApp me directly
                   </a>
@@ -82,8 +83,8 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-slate-700 dark:text-slate-200 min-h-[44px]"
                   >
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white flex-shrink-0">
-                      <Linkedin className="h-4 w-4" />
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#0077B5] text-white flex-shrink-0">
+                      <LinkedInLogo className="h-4 w-4" />
                     </span>
                     Connect on LinkedIn
                   </a>

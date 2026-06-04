@@ -4,6 +4,7 @@ import { ServiceCard } from "@/components/cards/ServiceCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { ToolStackSection } from "@/components/sections/ToolStackSection";
 import { FAQ } from "@/components/sections/FAQ";
+import { ServiceIcon } from "@/components/icons/ServiceIcons";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -45,7 +46,6 @@ export default function ServicesPage() {
       <section className="section">
         <div className="container space-y-16">
           {services.map((service) => {
-            const Icon = service.icon;
             const accent =
               service.color === "electric"
                 ? "text-electric"
@@ -59,13 +59,8 @@ export default function ServicesPage() {
                 className="grid lg:grid-cols-3 gap-8 items-start scroll-mt-28"
               >
                 <div className="lg:col-span-1">
-                  <div
-                    className={cn(
-                      "inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-white/10 to-white/0 ring-1 ring-white/10",
-                      accent
-                    )}
-                  >
-                    <Icon className="h-5 w-5" />
+                  <div className="inline-flex h-12 w-12 items-center justify-center">
+                    <ServiceIcon slug={service.slug} className="h-10 w-10" />
                   </div>
                   <h2 className="mt-4 font-display text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
                     {service.title}

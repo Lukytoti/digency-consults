@@ -45,7 +45,8 @@ export async function POST(req: NextRequest) {
           dateStyle: "full",
           timeStyle: "short",
         });
-        await resend.emails.send({
+        console.log(`[newsletter] Sending notification email to: ${TO} from: ${FROM}`);
+        const { error: sendError } = await resend.emails.send({
           from: FROM,
           to: TO,
           subject: `New newsletter signup: ${data.email}`,
@@ -58,8 +59,14 @@ export async function POST(req: NextRequest) {
             </ul>
           `,
         });
+
+        if (sendError) {
+          console.error("[newsletter] ❌ Notification email failed:", JSON.stringify(sendError));
+        } else {
+          console.log("[newsletter] ✅ Notification email sent to:", TO);
+        }
       } catch (err) {
-        console.error("[newsletter] resend error", err);
+        console.error("[newsletter] ❌ resend error:", err instanceof Error ? err.message : err);
       }
     } else {
       console.warn("[newsletter] RESEND_API_KEY not set, skipping notification email");

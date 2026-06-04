@@ -1,4 +1,5 @@
 import { tools } from "@/data/tools";
+import { ToolLogo } from "@/components/icons/BrandIcons";
 import { cn } from "@/lib/utils";
 
 export function ToolStackSection({
@@ -29,11 +30,11 @@ export function ToolStackSection({
             {list.map((t, idx) => (
               <div
                 key={`${t.name}-${idx}`}
-                className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+                className="inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
               >
-                <span className="h-2 w-2 rounded-full bg-gradient-to-br from-electric to-neon-purple" />
-                {t.name}
-                <span className="text-xs text-slate-500 dark:text-slate-400">
+                <ToolLogo name={t.name} className="h-4 w-4 shrink-0" />
+                <span>{t.name}</span>
+                <span className="text-[11px] text-slate-400 dark:text-slate-500">
                   · {t.category}
                 </span>
               </div>

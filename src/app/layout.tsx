@@ -49,7 +49,10 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: siteConfig.url },
   robots: { index: true, follow: true },
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: "/branding/digency-logo.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -10,14 +10,17 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
   return (
     <article className="relative h-full rounded-2xl glass-card p-6 transition hover:-translate-y-1 hover:shadow-glow">
-      <Quote className="h-6 w-6 text-electric/40" />
+      <Quote className="h-6 w-6 text-electric/40" aria-hidden="true" />
       <p className="mt-4 text-slate-700 dark:text-slate-200 leading-relaxed">
-        “{testimonial.quote}”
+        &ldquo;{testimonial.quote}&rdquo;
       </p>
 
       <div className="mt-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-electric to-neon-purple text-white text-sm font-bold inline-flex items-center justify-center">
+          <div
+            className="h-10 w-10 rounded-full bg-gradient-to-br from-electric to-neon-purple text-white text-sm font-bold inline-flex items-center justify-center"
+            aria-hidden="true"
+          >
             {initials}
           </div>
           <div>
@@ -30,9 +33,9 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           </div>
         </div>
         <div className="flex flex-col items-end gap-1">
-          <div className="flex items-center text-amber-500">
+          <div className="flex items-center text-amber-500" aria-label={`${testimonial.rating} out of 5 stars`}>
             {[...Array(testimonial.rating)].map((_, i) => (
-              <Star key={i} className="h-3.5 w-3.5 fill-current" />
+              <Star key={i} className="h-3.5 w-3.5 fill-current" aria-hidden="true" />
             ))}
           </div>
           <span className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400">

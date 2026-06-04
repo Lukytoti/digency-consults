@@ -51,7 +51,8 @@ export async function POST(req: NextRequest) {
           dateStyle: "full",
           timeStyle: "short",
         });
-        await resend.emails.send({
+        console.log(`[contact] Sending notification email to: ${TO} from: ${FROM}`);
+        const { error: sendError } = await resend.emails.send({
           from: FROM,
           to: TO,
           replyTo: data.email,
@@ -72,8 +73,14 @@ export async function POST(req: NextRequest) {
           `,
         });
 
+        if (sendError) {
+          console.error("[contact] ❌ Notification email failed:", JSON.stringify(sendError));
+        } else {
+          console.log("[contact] ✅ Notification email sent to:", TO);
+        }
+
         // Confirmation to the prospect
-        await resend.emails.send({
+        const { error: confirmError } = await resend.emails.send({
           from: FROM,
           to: data.email,
           subject: "Thanks — I'll reply within 24 hours",
@@ -85,6 +92,12 @@ export async function POST(req: NextRequest) {
             <p>— Tobi<br/>AI &amp; CRM Infrastructure Engineer</p>
           `,
         });
+
+        if (confirmError) {
+          console.error("[contact] ❌ Confirmation email to prospect failed:", JSON.stringify(confirmError));
+        } else {
+          console.log("[contact] ✅ Confirmation email sent to:", data.email);
+        }
       } catch (err) {
         console.error("[contact] resend error", err);
       }
