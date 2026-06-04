@@ -103,6 +103,19 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
+
+              {/* Available for Projects Badge */}
+              <div className="absolute bottom-5 right-5 z-10">
+                <div className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-xl px-3.5 py-2 shadow-[0_4px_20px_rgba(0,0,0,0.15),0_0_12px_rgba(16,185,129,0.15)]">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                  </span>
+                  <span className="text-xs font-semibold text-white whitespace-nowrap">
+                    Available for Projects
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="relative rounded-3xl glass-card p-2">
