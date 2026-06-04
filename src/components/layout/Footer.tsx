@@ -16,7 +16,7 @@ export function Footer() {
               alt="Digency Consults"
               width={180}
               height={44}
-              className="h-9 w-auto object-contain"
+              className="w-[160px] h-auto object-contain"
             />
           </Link>
           <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">

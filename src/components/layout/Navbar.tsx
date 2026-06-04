@@ -105,7 +105,7 @@ export function Navbar() {
             <div
               className={cn(
                 "relative flex items-center justify-between px-4 lg:px-5 transition-all duration-500",
-                scrolled ? "h-[56px]" : "h-[60px]"
+                scrolled ? "h-[60px]" : "h-[68px]"
               )}
             >
               {/* ─── Left: Logo (image only, no text) ────────── */}
@@ -116,9 +116,9 @@ export function Navbar() {
                 <Image
                   src="/branding/digency-logo.png"
                   alt="Digency Consults"
-                  width={200}
-                  height={48}
-                  className="h-8 w-auto sm:h-9 lg:h-10 object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                  width={220}
+                  height={50}
+                  className="w-[140px] sm:w-[170px] lg:w-[200px] h-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                   priority
                 />
               </Link>
