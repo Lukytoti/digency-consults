@@ -1,13 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Service } from "@/data/services";
-import { serviceIconMap } from "@/components/icons/ServiceIcons";
+import { ServiceIcon } from "@/components/icons/ServiceIcons";
 
 export function ServiceCard({ service }: { service: Service }) {
-  const IconComponent = serviceIconMap[service.slug];
-
   return (
     <Link
       href={`/services#${service.slug}`}
@@ -16,13 +12,9 @@ export function ServiceCard({ service }: { service: Service }) {
       {/* Hover glow effect */}
       <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-electric/[0.03] via-transparent to-neon-purple/[0.03]" />
 
-      {/* Icon Container — consistent 48x48 with brand logo SVG */}
+      {/* Icon Container */}
       <div className="relative inline-flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-        {IconComponent ? (
-          <IconComponent className="h-10 w-10" />
-        ) : (
-          <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-electric to-neon-purple" />
-        )}
+        <ServiceIcon slug={service.slug} className="h-10 w-10" />
       </div>
 
       {/* Title */}
