@@ -108,26 +108,19 @@ export function Navbar() {
                 scrolled ? "h-[56px]" : "h-[60px]"
               )}
             >
-              {/* ─── Left: Logo ──────────────────────────────────── */}
+              {/* ─── Left: Logo (image only, no text) ────────── */}
               <Link
                 href="/"
-                className="group flex items-center gap-2.5 font-display font-bold shrink-0"
+                className="group shrink-0 flex items-center"
               >
                 <Image
                   src="/branding/digency-logo.png"
                   alt="Digency Consults"
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
+                  width={200}
+                  height={48}
+                  className="h-8 w-auto sm:h-9 lg:h-10 object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                   priority
                 />
-                <span className="text-base text-slate-900 dark:text-white tracking-tight">
-                  Digency
-                  <span className="text-electric">.</span>
-                  <span className="hidden sm:inline text-slate-400 dark:text-slate-500 font-medium text-sm ml-0.5">
-                    Consults
-                  </span>
-                </span>
               </Link>
 
               {/* ─── Center: Navigation ──────────────────────────── */}

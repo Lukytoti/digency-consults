@@ -10,18 +10,14 @@ export function Footer() {
     <footer className="relative border-t border-slate-200/70 dark:border-white/10 bg-white dark:bg-navy-950">
       <div className="container py-12 sm:py-16 md:py-20 grid gap-10 sm:gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-2 max-w-md">
-          <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold">
+          <Link href="/" className="inline-flex">
             <Image
               src="/branding/digency-logo.png"
               alt="Digency Consults"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain rounded-lg"
+              width={180}
+              height={44}
+              className="h-9 w-auto object-contain"
             />
-            <span className="text-slate-900 dark:text-white">
-              {siteConfig.name}
-              <span className="text-electric">.</span>
-            </span>
           </Link>
           <p className="mt-4 text-sm text-slate-600 dark:text-slate-400">
             {siteConfig.tagline} GoHighLevel • n8n • OpenAI • WhatsApp •
