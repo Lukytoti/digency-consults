@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { WhatsAppLogo } from "@/components/icons/BrandIcons";
 
 export function CTASection({
   title = "Ready to turn your business into a system that prints leads?",
@@ -39,7 +40,7 @@ export function CTASection({
                 rel="noopener noreferrer"
                 className="btn px-6 py-3.5 border border-white/20 text-white hover:bg-white/10"
               >
-                <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+                <WhatsAppLogo className="h-4 w-4" /> Chat on WhatsApp
               </a>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Linkedin, ArrowUpRight, Award, Star, Sparkles } from "lucide-react";
+import { ArrowUpRight, Award, Star, Sparkles } from "lucide-react";
 import {
   certifications,
   linkedInPosts,
@@ -6,6 +6,7 @@ import {
   proofStats,
 } from "@/data/social-proof";
 import { siteConfig } from "@/lib/site-config";
+import { LinkedInLogo } from "@/components/icons/BrandIcons";
 
 export function SocialProofSection() {
   return (
@@ -30,7 +31,7 @@ export function SocialProofSection() {
               rel="noopener noreferrer"
               className="mt-6 btn-primary inline-flex"
             >
-              <Linkedin className="h-4 w-4" /> Connect on LinkedIn
+              <LinkedInLogo className="h-4 w-4" /> Connect on LinkedIn
               <ArrowUpRight className="h-4 w-4" />
             </a>
 
@@ -75,8 +76,8 @@ export function SocialProofSection() {
                     rel="noopener noreferrer"
                     className="group rounded-2xl glass-card p-5 transition hover:-translate-y-1 hover:shadow-glow"
                   >
-                    <div className="flex items-center gap-2 text-xs text-electric font-medium">
-                      <Linkedin className="h-3.5 w-3.5" /> LinkedIn Post
+                    <div className="flex items-center gap-2 text-xs text-[#0077B5] font-medium">
+                      <LinkedInLogo className="h-3.5 w-3.5" /> LinkedIn Post
                     </div>
                     <h4 className="mt-2 font-display font-semibold text-slate-900 dark:text-white">
                       {p.title}

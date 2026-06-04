@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Sparkles, Linkedin, Mail, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Sparkles, Mail, ArrowUpRight, Calendar } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { WhatsAppLogo, LinkedInLogo } from "@/components/icons/BrandIcons";
 
 export function Footer() {
   return (
@@ -65,16 +66,16 @@ export function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-[#0077B5] dark:text-slate-300 dark:hover:text-[#0077B5] transition-colors"
               >
-                <Linkedin className="h-4 w-4" /> LinkedIn
+                <LinkedInLogo className="h-4 w-4" /> LinkedIn
                 <ArrowUpRight className="h-3 w-3" />
               </a>
             </li>
             <li>
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300 transition-colors"
               >
                 <Mail className="h-4 w-4" /> {siteConfig.contact.email}
               </a>
@@ -84,9 +85,9 @@ export function Footer() {
                 href={siteConfig.contact.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-[#25D366] dark:text-slate-300 dark:hover:text-[#25D366] transition-colors"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
+                <WhatsAppLogo className="h-4 w-4" /> WhatsApp
               </a>
             </li>
             <li>
@@ -94,9 +95,9 @@ export function Footer() {
                 href={siteConfig.contact.calendar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300"
+                className="inline-flex items-center gap-2 text-slate-600 hover:text-electric dark:text-slate-300 transition-colors"
               >
-                Book a Strategy Call
+                <Calendar className="h-4 w-4" /> Book a Strategy Call
                 <ArrowUpRight className="h-3 w-3" />
               </a>
             </li>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Linkedin, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { CTASection } from "@/components/sections/CTASection";
 import { ToolStackSection } from "@/components/sections/ToolStackSection";
@@ -9,6 +9,7 @@ import { ResultsSection } from "@/components/sections/ResultsSection";
 import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { CertificationsSection } from "@/components/certifications";
 import { certifications } from "@/data/certifications";
+import { LinkedInLogo } from "@/components/icons/BrandIcons";
 
 export const metadata: Metadata = {
   title: "About Me — AI & CRM Infrastructure Engineer",
@@ -75,7 +76,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="btn-secondary px-6 py-3.5 w-full sm:w-auto min-h-[48px] justify-center"
               >
-                <Linkedin className="h-4 w-4" /> Connect on LinkedIn
+                <LinkedInLogo className="h-4 w-4" /> Connect on LinkedIn
               </a>
             </div>
           </div>
@@ -163,9 +164,9 @@ export default function AboutPage() {
                   href={siteConfig.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 text-sm text-electric"
+                  className="mt-6 inline-flex items-center gap-2 text-sm text-[#0077B5]"
                 >
-                  <Linkedin className="h-4 w-4" /> View LinkedIn profile
+                  <LinkedInLogo className="h-4 w-4" /> View LinkedIn profile
                 </a>
               </div>
             </div>
