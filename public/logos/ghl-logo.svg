@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <rect width="120" height="120" rx="24" fill="#E8346A"/>
+  <!-- GHL connected nodes/dots logo -->
+  <circle cx="40" cy="40" r="8" fill="#fff"/>
+  <circle cx="80" cy="40" r="8" fill="#fff"/>
+  <circle cx="60" cy="65" r="8" fill="#fff"/>
+  <circle cx="40" cy="90" r="8" fill="#fff"/>
+  <circle cx="80" cy="90" r="8" fill="#fff"/>
+  <!-- Connection lines -->
+  <path d="M46 46l8 13M74 46l-8 13" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M54 71l-8 13M66 71l8 13" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M48 40h24M48 90h24" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+</svg>

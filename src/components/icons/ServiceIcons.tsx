@@ -5,42 +5,39 @@ interface IconProps {
   className?: string;
 }
 
-// ─── GoHighLevel Logo ────────────────────────────────────────────────────────
+// ─── GoHighLevel Logo (uses uploaded SVG) ────────────────────────────────────
 function GHLIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn("h-6 w-6", className)}>
-      <rect width="40" height="40" rx="8" fill="#FF6B35" />
-      <path d="M12 14h6v2h-4v3h3v2h-3v5h-2V14zm10 0h2v10h4v2h-6V14z" fill="white" />
-      <path d="M20 28c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" stroke="white" strokeWidth="1.5" fill="none" opacity="0.3" />
-    </svg>
+    <img
+      src="/logos/ghl-logo.svg"
+      alt="GoHighLevel"
+      className={cn("h-6 w-6 object-contain", className)}
+      aria-hidden="true"
+    />
   );
 }
 
-// ─── GoHighLevel Workflow ────────────────────────────────────────────────────
+// ─── GoHighLevel Workflow (uses same GHL logo) ───────────────────────────────
 function GHLWorkflowIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn("h-6 w-6", className)}>
-      <rect width="40" height="40" rx="8" fill="#FF6B35" />
-      <circle cx="12" cy="14" r="3" fill="white" />
-      <circle cx="28" cy="14" r="3" fill="white" />
-      <circle cx="20" cy="26" r="3" fill="white" />
-      <path d="M14.5 15.5L18 23.5M25.5 15.5L22 23.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M12 18v2a3 3 0 003 3h10a3 3 0 003-3v-2" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
-    </svg>
+    <img
+      src="/logos/ghl-logo.svg"
+      alt="GoHighLevel Workflow"
+      className={cn("h-6 w-6 object-contain", className)}
+      aria-hidden="true"
+    />
   );
 }
 
-// ─── n8n Logo ────────────────────────────────────────────────────────────────
+// ─── n8n Logo (uses uploaded SVG) ────────────────────────────────────────────
 function N8nIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn("h-6 w-6", className)}>
-      <rect width="40" height="40" rx="8" fill="#EA4B71" />
-      <rect x="8" y="16" width="8" height="8" rx="2" fill="white" />
-      <rect x="24" y="16" width="8" height="8" rx="2" fill="white" />
-      <rect x="16" y="12" width="8" height="8" rx="2" fill="white" opacity="0.8" />
-      <rect x="16" y="20" width="8" height="8" rx="2" fill="white" opacity="0.6" />
-      <path d="M16 20h-4M24 20h-4" stroke="#EA4B71" strokeWidth="1.5" />
-    </svg>
+    <img
+      src="/logos/n8n-logo.svg"
+      alt="n8n"
+      className={cn("h-6 w-6 object-contain", className)}
+      aria-hidden="true"
+    />
   );
 }
 
@@ -58,14 +55,15 @@ function VoiceAgentIcon({ className }: IconProps) {
   );
 }
 
-// ─── WhatsApp Logo ───────────────────────────────────────────────────────────
+// ─── WhatsApp Logo (uses uploaded SVG) ───────────────────────────────────────
 function WhatsAppServiceIcon({ className }: IconProps) {
   return (
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn("h-6 w-6", className)}>
-      <rect width="40" height="40" rx="8" fill="#25D366" />
-      <path d="M20 9c-6.075 0-11 4.925-11 11 0 1.94.504 3.762 1.386 5.346L9 31l5.817-1.527A10.952 10.952 0 0020 31c6.075 0 11-4.925 11-11S26.075 9 20 9z" fill="white" />
-      <path d="M16.5 14.5c-.3-.7-.6-.7-.9-.7h-.7c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.3s1.4 3.8 1.6 4.1c.2.3 2.8 4.3 6.8 6 4 1.7 4 1.1 4.7 1.1.7 0 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.1-.4-.3-.8-.5s-2.3-1.1-2.7-1.3c-.4-.2-.6-.2-.9.2-.3.4-1.1 1.3-1.3 1.5-.2.2-.5.3-.9.1s-1.7-.6-3.2-2c-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.3-.4.4-.7.1-.3.1-.5 0-.7-.2-.2-1-2.3-1.3-3.1z" fill="#25D366" />
-    </svg>
+    <img
+      src="/logos/whatsapp-logo.svg"
+      alt="WhatsApp"
+      className={cn("h-6 w-6 object-contain", className)}
+      aria-hidden="true"
+    />
   );
 }
 

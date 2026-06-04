@@ -56,19 +56,11 @@ export function ToolLogo({ name, className = "h-4 w-4" }: { name: string; classN
   switch (name) {
     case "GoHighLevel":
       return (
-        <svg viewBox="0 0 16 16" className={className} aria-hidden="true">
-          <rect width="16" height="16" rx="3" fill={color} />
-          <path d="M4 6h3v1h-2v2h1.5v1H5v2H4V6zm5 0h1v5h2v1H9V6z" fill="white" />
-        </svg>
+        <img src="/logos/ghl-logo.svg" alt="GoHighLevel" className={className} aria-hidden="true" />
       );
     case "n8n":
       return (
-        <svg viewBox="0 0 16 16" className={className} aria-hidden="true">
-          <rect width="16" height="16" rx="3" fill={color} />
-          <rect x="3" y="6" width="3.5" height="3.5" rx="1" fill="white" />
-          <rect x="9.5" y="6" width="3.5" height="3.5" rx="1" fill="white" />
-          <path d="M6.5 7.75h3" stroke="white" strokeWidth="1" />
-        </svg>
+        <img src="/logos/n8n-logo.svg" alt="n8n" className={className} aria-hidden="true" />
       );
     case "OpenAI":
       return (
@@ -107,11 +99,7 @@ export function ToolLogo({ name, className = "h-4 w-4" }: { name: string; classN
       );
     case "WhatsApp API":
       return (
-        <svg viewBox="0 0 16 16" className={className} aria-hidden="true">
-          <rect width="16" height="16" rx="3" fill={color} />
-          <path d="M8 3.5a4.5 4.5 0 00-3.9 6.7L3.5 12.5l2.4-.6A4.5 4.5 0 108 3.5z" fill="white" />
-          <path d="M6.5 6.5c.5-.3 1-.1 1.2.3l.3.6c.1.2 0 .5-.2.6l-.3.2c.3.7.8 1.2 1.5 1.5l.2-.3c.1-.2.4-.3.6-.2l.6.3c.4.2.5.7.3 1.1-.4.5-1 .7-1.6.5-1.5-.5-2.8-1.8-3.3-3.3-.2-.6 0-1.2.5-1.6z" fill={color} />
-        </svg>
+        <img src="/logos/whatsapp-logo.svg" alt="WhatsApp" className={className} aria-hidden="true" />
       );
     case "Supabase":
       return (
