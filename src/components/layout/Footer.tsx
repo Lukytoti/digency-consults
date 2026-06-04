@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Sparkles, Mail, ArrowUpRight, Calendar } from "lucide-react";
+import Image from "next/image";
+import { Mail, ArrowUpRight, Calendar } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { WhatsAppLogo, LinkedInLogo } from "@/components/icons/BrandIcons";
@@ -9,10 +10,14 @@ export function Footer() {
     <footer className="relative border-t border-slate-200/70 dark:border-white/10 bg-white dark:bg-navy-950">
       <div className="container py-12 sm:py-16 md:py-20 grid gap-10 sm:gap-12 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-2 max-w-md">
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold">
-            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-electric via-neon-purple to-neon-green text-white shadow-glow">
-              <Sparkles className="h-4 w-4" />
-            </span>
+          <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold">
+            <Image
+              src="/branding/digency-logo.png"
+              alt="Digency Consults"
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain rounded-lg"
+            />
             <span className="text-slate-900 dark:text-white">
               {siteConfig.name}
               <span className="text-electric">.</span>

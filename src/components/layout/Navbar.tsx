@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sparkles, ArrowRight, Clock } from "lucide-react";
+import { Menu, X, ArrowRight, Clock } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -110,12 +111,16 @@ export function Navbar() {
               {/* ─── Left: Logo ──────────────────────────────────── */}
               <Link
                 href="/"
-                className="group flex items-center gap-2 font-display font-bold shrink-0"
+                className="group flex items-center gap-2.5 font-display font-bold shrink-0"
               >
-                <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-electric via-neon-purple to-neon-green text-white shadow-glow transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow-purple">
-                  <Sparkles className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-12" />
-                  <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-electric via-neon-purple to-neon-green opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-60" />
-                </span>
+                <Image
+                  src="/branding/digency-logo.png"
+                  alt="Digency Consults"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain rounded-lg transition-transform duration-300 group-hover:scale-110"
+                  priority
+                />
                 <span className="text-base text-slate-900 dark:text-white tracking-tight">
                   Digency
                   <span className="text-electric">.</span>
