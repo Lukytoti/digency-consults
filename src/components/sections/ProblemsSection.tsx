@@ -47,11 +47,11 @@ export function ProblemsSection() {
         <div className="max-w-3xl">
           <p className="eyebrow">Problems I solve</p>
           <h2 className="mt-4 section-title text-slate-900 dark:text-white text-balance">
-            If your business has any of these, you're losing revenue every day.
+            If your business has any of these, you&apos;re losing revenue every day.
           </h2>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-            I've seen the same six problems kill growth across coaching,
-            agencies, real estate and B2B. The good news: they're all
+            I&apos;ve seen the same six problems kill growth across coaching,
+            agencies, real estate and B2B. The good news: they&apos;re all
             infrastructure problems — and infrastructure is fixable.
           </p>
         </div>
@@ -64,8 +64,8 @@ export function ProblemsSection() {
                 key={p.title}
                 className="group relative rounded-2xl glass-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
               >
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500/10 to-amber-500/10 text-rose-500">
-                  <Icon className="h-5 w-5" />
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-rose-500/10 to-amber-500/10 text-rose-500 dark:from-rose-500/20 dark:to-amber-500/10">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <h3 className="mt-5 font-display text-lg font-semibold text-slate-900 dark:text-white">
                   {p.title}

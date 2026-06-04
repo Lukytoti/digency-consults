@@ -1,24 +1,24 @@
-import { Compass, Cog, LineChart, Rocket } from "lucide-react";
+import { Search, Wrench, Rocket, LineChart } from "lucide-react";
 
 const steps = [
   {
-    icon: Compass,
-    title: "1. Audit & Strategy",
+    icon: Search,
+    title: "Audit & Strategy",
     body: "We map your current funnel, CRM and follow-up. I find the highest-leverage automation that will move revenue first.",
   },
   {
-    icon: Cog,
-    title: "2. Build & Integrate",
+    icon: Wrench,
+    title: "Build & Integrate",
     body: "I build the infrastructure — GoHighLevel, n8n, AI agents, funnels, websites — and connect every piece end-to-end.",
   },
   {
     icon: Rocket,
-    title: "3. Launch & Optimize",
+    title: "Launch & Optimize",
     body: "We go live, test with real traffic, fix bottlenecks and tune the system until conversion is repeatable.",
   },
   {
     icon: LineChart,
-    title: "4. Scale with Confidence",
+    title: "Scale with Confidence",
     body: "Reporting, dashboards and SOPs so your team can run, iterate and scale the system without relying on me forever.",
   },
 ];
@@ -33,7 +33,7 @@ export function HowIHelp() {
             A 4-step process built around revenue, not deliverables.
           </h2>
           <p className="mt-4 text-slate-600 dark:text-slate-300">
-            Most agencies sell hours. I sell outcomes. Here's how a typical
+            Most agencies sell hours. I sell outcomes. Here&apos;s how a typical
             engagement runs from first call to scaled system.
           </p>
         </div>
@@ -47,9 +47,9 @@ export function HowIHelp() {
                 className="relative rounded-2xl glass-card p-6"
               >
                 <div className="absolute -top-3 -left-3 h-10 w-10 rounded-xl bg-gradient-to-br from-electric via-neon-purple to-neon-green text-white flex items-center justify-center shadow-glow">
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                 </div>
-                <p className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                <p className="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">
                   Step {i + 1}
                 </p>
                 <h3 className="mt-2 font-display text-lg font-semibold text-slate-900 dark:text-white">
